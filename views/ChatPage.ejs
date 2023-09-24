@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Page</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .Box {
+            display: flex;
+            flex-direction: column;
+            background-color: #25d366;
+            padding: 40px;
+        }
+
+        .header {
+            background-color: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header h2 {
+            font-weight: 500;
+            padding: 15px;
+        }
+
+        hr {
+            padding: 1px;
+            outline: none;
+            border: none;
+            background-color: black;
+        }
+
+        input {
+            width: 250px;
+            padding: 13px;
+            background-color: white;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        textarea {
+            outline: none;
+            border: none;
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .btn {
+            width: 200px;
+            background-color: #07f35e;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            outline: none;
+            padding: 10px;
+            font-size: 18px;
+            box-shadow: 4px 4px 4px black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h2>Mini WhatsApp</h2>
+    </header>
+    <hr>
+    <div class="Box">
+        <form action="/chat/api" method="post">
+            <input type="text" placeholder="username" name="username" required>
+            <br><br>
+            <input type="text" placeholder="form" name="form" required>
+            <br><br>
+            <input type="text" placeholder="to" name="to" required>
+            <br><br>
+            <textarea name="msg" cols="100" rows="5" placeholder="type here your message"></textarea>
+            <br><br>
+            <button class="btn">Send</button>
+        </form>
+    </div>
+</body>
+
+</html>

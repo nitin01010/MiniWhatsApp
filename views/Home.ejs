@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Whatsapp</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .Box2 {
+            background-color: #1c1e21;
+            padding: 10px;
+            color: white;
+            width: 300px;
+            height: 175px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        p {
+            padding: 4px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .Box {
+            display: flex;
+            flex-direction: column;
+            background-color: #25d366;
+            padding: 40px;
+        }
+
+        .header {
+            background-color: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header h2 {
+            font-weight: 500;
+            padding: 15px;
+        }
+
+        hr {
+            padding: 1px;
+            outline: none;
+            border: none;
+            background-color: black;
+        }
+
+        .Btn {
+            padding: 10px;
+            width: 200px;
+            font-size: 18px;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid black;
+            cursor: pointer;
+            box-shadow: 4px 4px 4px black;
+            background-attachment: fixed;
+            background-color: #28ff77;
+            color: black;
+            font-weight: 600;
+        }
+
+        .BoxFive {
+            padding: 5px;
+        }
+
+        .Btn2 {
+            background-color: #25d366;
+            width: 80px;
+            padding: 4px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px #25d366;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .Btn3 {
+            font-weight: 500;
+            font-size: 16px;
+            background-color: #25d366;
+            width: 80px;
+            padding: 4px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px #25d366;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h2>Mini WhatsApp</h2>
+    </header>
+    <hr>
+    <div class="Box">
+        <% for(key in data) { %>
+            <div class="Box2">
+                <h3>@ <%=data[key].username %>
+                </h3>
+                <p>form : <%=data[key].form %>
+                </p>
+                <p>to : <%=data[key].to %>
+                </p>
+                <p>message : <%=data[key].msg %>
+                </p>
+                <div class="BoxFive">
+                    <a href="/delete/api/<%=data[key].id %>">
+                        <button class="Btn2">Delete</button>
+                    </a>
+                    <button class="Btn3">Update</button>
+                </div>
+            </div>
+            <% } %>
+                <a href="http://127.0.0.1:3000/chat">
+                    <button class="Btn"> Chat </button>
+                </a>
+    </div>
+
+</body>
+
+</html>
